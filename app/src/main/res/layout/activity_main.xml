@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zdlly.shadow.com.zdlly.shadow.MyView.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edit_sides"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入多边形边数"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="选择颜色作为背景"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="选择图片作为背景"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/color_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开颜色选择器" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/picture_take"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="照相" />
+
+        <Button
+            android:id="@+id/picture_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="相册" />
+
+        <Button
+            android:id="@+id/my_picture_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/picchoose" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY" />
+
+        <com.zdlly.shadow.MyView.MyShapeView
+            android:id="@+id/my_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+    </FrameLayout>
+
+
+</LinearLayout>
