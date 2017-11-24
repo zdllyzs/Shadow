@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="picchoose">自定义图片选择器</string>
+    <string name="title_activity_text_select">TextSelectActivity</string>
 </resources>

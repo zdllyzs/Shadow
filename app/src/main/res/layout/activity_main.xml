@@ -5,32 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zdlly.shadow.com.zdlly.shadow.MyView.MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/edit_sides"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="请输入多边形边数"
-                android:inputType="number" />
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="确定" />
-    </LinearLayout>
+    tools:context="com.zdlly.shadow.MyView.MainActivity">
 
     <RadioGroup
         android:id="@+id/choose"
@@ -44,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:text="选择颜色作为背景"
+            android:text="选择颜色"
             android:textSize="16sp" />
 
         <android.support.v7.widget.AppCompatRadioButton
@@ -56,11 +31,24 @@
             android:textSize="16sp" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/color_choose"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="打开颜色选择器" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/color_choose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="打开颜色选择器"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/select_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="打开文本选择"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,22 +78,16 @@
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/picture_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY" />
-
-        <com.zdlly.shadow.MyView.MyShapeView
-            android:id="@+id/my_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/ic_launcher" />
     </FrameLayout>
 
 
