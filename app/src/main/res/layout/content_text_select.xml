@@ -8,4 +8,9 @@
     tools:context="com.zdlly.shadow.MyView.TextSelectActivity"
     tools:showIn="@layout/activity_text_select">
 
+    <com.zdlly.shadow.MyView.MyTextView
+        android:id="@+id/my_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHighlight="#FFF"/>
 </android.support.constraint.ConstraintLayout>

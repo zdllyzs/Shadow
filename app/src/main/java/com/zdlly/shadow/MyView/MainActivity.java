@@ -214,7 +214,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(intent2, ListActivity.RESULT_OK);
                 break;
             case R.id.select_text:
-                Intent intent3=new Intent(MainActivity.this,TextSelectActivity.class);// TODO: 2017.11.24 新activity
+                Intent intent3=new Intent(MainActivity.this,TextSelectActivity.class);
+                startActivity(intent3);// TODO: 2017.11.24 新activity
                 break;
         }
     }
