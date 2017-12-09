@@ -15,9 +15,6 @@ import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.MotionEvent;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-
 import static android.content.ContentValues.TAG;
 
 /**
@@ -28,9 +25,10 @@ public class MyTextView extends android.support.v7.widget.AppCompatEditText {
     private int offset;
     private ForegroundColorSpan mSelectionForegroundColorSpan;
     private ForegroundColorSpan oldmSelectionForegroundColorSpan;
-    private HashMap<Integer, Integer> selectText = new LinkedHashMap<>();
     private boolean isNewText = false;
     private boolean isReverse = false;
+    private int oldX;
+    private int newX;
 
     public MyTextView(Context context) {
         super(context);
@@ -91,11 +89,13 @@ public class MyTextView extends android.support.v7.widget.AppCompatEditText {
         int line = 0;
         switch (action) {
             case MotionEvent.ACTION_DOWN:
+                oldX=(int)event.getX();
                 line = layout.getLineForVertical(getScrollY() + (int) event.getY());
                 offset = layout.getOffsetForHorizontal(line, (int) event.getX());
                 Selection.setSelection(getEditableText(), offset);
                 break;
             case MotionEvent.ACTION_MOVE:
+                newX=(int)event.getX();
                 if (oldmSelectionForegroundColorSpan != null && !isNewText)
                     getText().removeSpan(oldmSelectionForegroundColorSpan);
                 mSelectionForegroundColorSpan = new ForegroundColorSpan(isReverse ? Color.BLACK : Color.RED);
@@ -115,8 +115,7 @@ public class MyTextView extends android.support.v7.widget.AppCompatEditText {
                 isNewText = true;
                 break;
         }
-
-        return true;
+        return newX - oldX > 1;
     }
 
     public void changeText() {
